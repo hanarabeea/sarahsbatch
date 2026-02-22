@@ -67,7 +67,7 @@ export default function Details() {
                 Besties only. Mark your calendar for the most epic night ever. If you're late, we're starting without you.
               </p>
               <h2 className="text-3xl md:text-4xl font-bold font-playfair neon-text-magenta mb-6 leading-tight">
-                Start the Uber now because traffic is a hate crime
+                Start the Uber now because Cairo traffic is a hate crime
               </h2>
               <motion.a
                 href="https://maps.app.goo.gl/LSfyLjeFAxMeqKwf9"
