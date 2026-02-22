@@ -112,6 +112,7 @@ export default function MessageBox() {
                   required
                   placeholder="Enter your name"
                   className="w-full px-6 py-3 bg-white/10 border border-primary/50 rounded-lg text-white placeholder-pink-200/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all font-poppins"
+                  suppressHydrationWarning={true}
                 />
               </motion.div>
 
@@ -133,6 +134,7 @@ export default function MessageBox() {
                   placeholder="Get real. Get messy. Get funny. What's your favorite Sarah moment?"
                   rows={5}
                   className="w-full px-6 py-3 bg-white/10 border border-primary/50 rounded-lg text-white placeholder-pink-200/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all font-poppins resize-none"
+                  suppressHydrationWarning={true}
                 />
               </motion.div>
 
@@ -146,6 +148,7 @@ export default function MessageBox() {
                   type="submit"
                   disabled={isLoading}
                   className="w-full neon-pulse px-6 py-4 bg-primary font-bold text-white rounded-lg text-lg font-poppins hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider"
+                  suppressHydrationWarning={true}
                 >
                   {isLoading ? 'Sending...' : 'Send Message'}
                 </button>

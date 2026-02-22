@@ -137,36 +137,50 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, #0a0015 0%, #2d0f4e 50%, #0a0015 100%);
+    background:
+      linear-gradient(135deg, rgba(10, 0, 21, 0.4) 0%, rgba(45, 15, 78, 0.3) 50%, rgba(10, 0, 21, 0.4) 100%),
+      url('/bg.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
+  }
+
+  /* Mobile-specific background fix */
+  @media (max-width: 768px) {
+    body {
+      background-attachment: scroll;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 }
 
-/* Neon Glow Text Effects */
+/* Script Font utility */
+.font-playlist {
+  font-family: var(--font-pacifico), cursive;
+}
+
+/* Intensive Neon Glow - Matches User Image */
 .neon-text {
-  font-weight: 700;
+  font-weight: 400;
   color: #fff;
   text-shadow:
-    0 0 4px #fff,
-    0 0 10px #fff,
-    0 0 20px #FF1493,
-    0 0 40px #FF1493,
-    0 0 80px #FF1493,
-    0 0 120px #FF1493,
-    0 0 160px #FF1493;
+    0 0 2px #fff,
+    0 0 5px #fff,
+    0 0 15px #FF1493,
+    0 0 30px #FF1493,
+    0 0 50px #FF1493;
 }
 
 .neon-text-magenta {
-  font-weight: 700;
+  font-weight: 400;
   color: #fff;
   text-shadow:
-    0 0 4px #fff,
-    0 0 10px #fff,
-    0 0 20px #FF10F0,
-    0 0 40px #FF10F0,
-    0 0 80px #FF10F0,
-    0 0 120px #FF10F0,
-    0 0 160px #FF10F0;
+    0 0 2px #fff,
+    0 0 5px #fff,
+    0 0 15px #FF10F0,
+    0 0 30px #FF10F0,
+    0 0 50px #FF10F0;
 }
 
 /* Button Effects - No Glow */
@@ -198,8 +212,6 @@
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 20, 147, 0.2);
 }
-
-
 
 @keyframes float {
 

@@ -15,7 +15,7 @@ export default function Details() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold font-playfair neon-text mb-4">
+          <h2 className="text-5xl md:text-7xl font-playlist neon-text mb-4">
             THE DEETS
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto" />
@@ -32,12 +32,12 @@ export default function Details() {
             whileHover={{ scale: 1.05 }}
           >
             <div className="mb-6">
-              <span className="text-6xl font-bold font-playfair neon-text-magenta">01</span>
+              <span className="text-6xl font-bold font-playlist neon-text-magenta">01</span>
             </div>
             <h3 className="text-sm font-bold font-poppins text-pink-300 mb-3 uppercase tracking-widest">
               The Big Day
             </h3>
-            <p className="text-3xl font-bold font-playfair neon-text">
+            <p className="text-3xl font-bold font-playlist neon-text">
               Saturday 21st March
             </p>
             <p className="text-pink-300 font-poppins font-bold text-lg mt-2">
@@ -61,12 +61,12 @@ export default function Details() {
           >
             <div>
               <div className="mb-6">
-                <span className="text-6xl font-bold font-playfair neon-text-magenta">02</span>
+                <span className="text-6xl font-bold font-playlist neon-text-magenta">02</span>
               </div>
               <p className="text-pink-200 font-poppins text-lg leading-relaxed mb-6">
-                Besties only. Mark your calendar for the most epic night ever. If you're late, we're starting without you.
+                Mark your calendar for the most epic night ever. If you're late, we're starting without you.
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold font-playfair neon-text-magenta mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold font-playlist neon-text-magenta mb-6 leading-tight">
                 Start the Uber now because Cairo traffic is a hate crime
               </h2>
               <motion.a
@@ -96,16 +96,16 @@ export default function Details() {
             {/* Left - Content */}
             <div>
               <div className="mb-6">
-                <span className="text-6xl font-bold font-playfair neon-text-magenta">03</span>
+                <span className="text-6xl font-bold font-playlist neon-text-magenta">03</span>
               </div>
               <h3 className="text-sm font-bold font-poppins text-pink-300 mb-4 uppercase tracking-widest">
                 How to Look
               </h3>
-              <p className="text-4xl md:text-5xl font-bold font-playfair neon-text mb-6">
+              <p className="text-4xl md:text-5xl font-bold font-playlist neon-text mb-6">
                 Dress Cute & Shiny
               </p>
               <p className="text-pink-200 font-poppins text-lg leading-relaxed">
-                If you aren't blinding people with your sparkle, you're doing it wrong. Main Character Energy ONLY. No boring fits. Come sparkly, leave legendary. This is YOUR moment to shine while Sarah gets hitched.
+                If you aren't blinding people with your sparkle, you're doing it wrong. Main Character Energy ONLY. No boring fits.
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export default function Details() {
           className="text-center mt-16"
         >
           <p className="text-2xl md:text-3xl font-poppins font-bold text-pink-200">
-            Besties Only. Bride Squad Energy. Let's get messy.
+            Bride Squad Energy. Let's get messy.
           </p>
         </motion.div>
       </div>

@@ -18,12 +18,12 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
     >
-      {/* Premium Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-950 via-pink-950/30 to-purple-950 pointer-events-none" />
+      {/* Premium Gradient Background - Semi-transparent to show body bg */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-pink-950/20 to-purple-950/60 pointer-events-none" />
 
       {/* Disco Ball with Parallax - Left Side */}
       <motion.div
-        className="absolute -left-20 top-1/4 w-64 h-64 md:w-96 md:h-96 pointer-events-none"
+        className="absolute left-0 top-1/4 w-32 h-32 sm:w-48 sm:h-48 md:left-[-5rem] md:-left-20 md:w-96 md:h-96 pointer-events-none z-0"
         style={{
           y: discoY,
         }}
@@ -38,17 +38,18 @@ export default function Hero() {
             alt="Disco Ball"
             width={400}
             height={400}
-            className="w-full h-full object-cover rounded-full drop-shadow-2xl filter brightness-125 contrast-125"
+            className="w-full h-full object-cover rounded-full drop-shadow-2xl brightness-110 contrast-110"
             priority
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 192px, 384px"
           />
           {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-500/40 to-purple-600/40 blur-3xl" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-500/40 to-purple-600/40 blur-2xl md:blur-3xl" />
         </motion.div>
       </motion.div>
 
       {/* Disco Ball with Parallax - Right Side */}
       <motion.div
-        className="absolute -right-20 bottom-1/4 w-56 h-56 md:w-80 md:h-80 pointer-events-none"
+        className="absolute right-0 bottom-1/4 w-28 h-28 sm:w-40 sm:h-40 md:right-[-5rem] md:-right-20 md:w-80 md:h-80 pointer-events-none z-0"
         style={{
           y: useTransform(scrollY, [0, 500], [0, -120]),
         }}
@@ -63,11 +64,12 @@ export default function Hero() {
             alt="Disco Ball"
             width={350}
             height={350}
-            className="w-full h-full object-cover rounded-full drop-shadow-2xl filter brightness-110 contrast-110 opacity-70"
+            className="w-full h-full object-cover rounded-full drop-shadow-2xl opacity-80"
             priority
+            sizes="(max-width: 640px) 112px, (max-width: 768px) 160px, 320px"
           />
           {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tl from-purple-600/30 to-pink-500/30 blur-3xl" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tl from-purple-600/30 to-pink-500/30 blur-2xl md:blur-3xl" />
         </motion.div>
       </motion.div>
 
@@ -83,7 +85,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <h1 className="text-6xl md:text-8xl font-playfair font-bold mb-3 neon-text">
+          <h1 className="text-7xl md:text-9xl font-playlist mb-3 neon-text">
             SARAH'S PARTY
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto mb-4" />
@@ -99,7 +101,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-8"
         >
-          <h2 className="text-3xl md:text-6xl font-bold font-poppins mb-6 text-white">
+          <h2 className="text-4xl md:text-7xl font-playlist mb-6 text-white">
             SARAH'S FINAL RIOT
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto" />
@@ -116,7 +118,7 @@ export default function Hero() {
             I found my forever... but tonight, bad decisions only
           </p>
           <p className="text-lg md:text-xl font-poppins text-secondary font-bold">
-            Besties Only. Final Night of Freedom. No Boring Energy.
+            Final Night of Freedom. No Boring Energy.
           </p>
         </motion.div>
 

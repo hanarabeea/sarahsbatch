@@ -58,7 +58,7 @@ export default function Countdown() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold font-playfair neon-text-magenta mb-4">
+          <h2 className="text-5xl md:text-7xl font-playlist neon-text-magenta mb-4">
             COUNTDOWN TO CHAOS
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto" />
@@ -76,7 +76,7 @@ export default function Countdown() {
               className="glass-card p-6 md:p-8 rounded-xl border-2 border-primary/50 hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/30"
             >
               <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-4 md:p-6 mb-4">
-                <div className="text-6xl md:text-7xl font-black font-playfair neon-text leading-none" style={{ letterSpacing: '0.05em' }}>
+                <div className="text-6xl md:text-7xl font-black font-playlist neon-text leading-none" style={{ letterSpacing: '0.05em' }}>
                   {unit.value.toString().padStart(2, '0')}
                 </div>
               </div>
@@ -87,17 +87,7 @@ export default function Countdown() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg md:text-2xl font-poppins text-pink-200">
-            Besties only. Mark your calendar for the most epic night ever.
-          </p>
-        </motion.div>
+
       </div>
     </section>
   )

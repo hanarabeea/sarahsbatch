@@ -6,7 +6,7 @@ import MusicPlayer from '@/components/music-player'
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-background via-purple-950/20 to-background min-h-screen">
+    <main className="bg-transparent min-h-screen">
       {/* Hero Section */}
       <Hero />
 
