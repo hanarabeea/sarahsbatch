@@ -32,7 +32,28 @@ export const metadata: Metadata = {
   viewport: {
     width: 'device-width',
     initialScale: 1,
-    themeColor: '#FF1493',
+  },
+  themeColor: '#FF1493',
+  openGraph: {
+    title: "Sarah's Party - Final Night of Freedom 🪩",
+    description: "Join Sarah for the wildest night before the wedding. Pink Disco Energy, Main Character Vibes, and Bride Squad Only.",
+    url: 'https://sarahsbachelorette.netlify.app',
+    siteName: "Sarah's Bachelorette",
+    images: [
+      {
+        url: 'https://sarahsbachelorette.netlify.app/disco-ball.jpg',
+        width: 1200,
+        height: 630,
+        alt: "Sarah's Party",
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Sarah's Party - Final Night of Freedom 🪩",
+    description: "Join Sarah for the wildest night before the wedding. Pink Disco Energy, Main Character Vibes, and Bride Squad Only.",
+    images: ['https://sarahsbachelorette.netlify.app/disco-ball.jpg'],
   },
 }
 
