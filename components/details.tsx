@@ -40,7 +40,10 @@ export default function Details() {
             <p className="text-3xl font-bold font-playfair neon-text">
               Saturday 21st March
             </p>
-            <p className="text-pink-200 font-poppins text-sm mt-3">
+            <p className="text-pink-300 font-poppins font-bold text-lg mt-2">
+              6:00 PM
+            </p>
+            <p className="text-pink-200 font-poppins text-sm mt-2">
               Final Night of Freedom begins. No turning back now, babe.
             </p>
           </motion.div>

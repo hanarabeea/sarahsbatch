@@ -7,20 +7,20 @@ import { useRef } from 'react'
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
-  
+
   // Parallax effect for disco ball
   const discoY = useTransform(scrollY, [0, 500], [0, 150])
   const discoRotate = useTransform(scrollY, [0, 500], [0, 180])
   const contentOpacity = useTransform(scrollY, [0, 300], [1, 0.3])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
     >
       {/* Premium Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-950 via-pink-950/30 to-purple-950 pointer-events-none" />
-      
+
       {/* Disco Ball with Parallax - Left Side */}
       <motion.div
         className="absolute -left-20 top-1/4 w-64 h-64 md:w-96 md:h-96 pointer-events-none"
@@ -72,7 +72,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Content */}
-      <motion.div 
+      <motion.div
         className="text-center relative z-10 max-w-3xl"
         style={{ opacity: contentOpacity }}
       >
@@ -127,14 +127,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center"
         >
-          <button className="neon-pulse px-10 py-4 bg-primary font-bold text-white rounded-lg text-lg font-poppins hover:scale-105 transition-transform duration-300 uppercase tracking-wider">
+          <button
+            onClick={() => document.getElementById('countdown')?.scrollIntoView({ behavior: 'smooth' })}
+            className="neon-pulse px-10 py-4 bg-primary font-bold text-white rounded-lg text-lg font-poppins hover:scale-105 transition-transform duration-300 uppercase tracking-wider"
+          >
             Get the Details
           </button>
         </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

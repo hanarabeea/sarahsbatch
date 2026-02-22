@@ -49,7 +49,7 @@ export default function Countdown() {
   ]
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 relative">
+    <section id="countdown" className="min-h-screen flex items-center justify-center px-4 py-20 relative">
       <div className="max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
