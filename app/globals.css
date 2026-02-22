@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Pink Disco Energy Color Palette */
+  --background: #0a0015;
+  --foreground: #ffffff;
+  --card: rgba(20, 10, 40, 0.8);
+  --card-foreground: #ffffff;
+  --popover: rgba(20, 10, 40, 0.95);
+  --popover-foreground: #ffffff;
+
+  /* Primary: Hot Pink */
+  --primary: #FF1493;
+  --primary-foreground: #ffffff;
+
+  /* Secondary: Neon Magenta */
+  --secondary: #FF10F0;
+  --secondary-foreground: #ffffff;
+
+  /* Accent: Deep Galactic Purple */
+  --accent: #6A0CAF;
+  --accent-foreground: #ffffff;
+
+  --muted: rgba(255, 255, 255, 0.2);
+  --muted-foreground: rgba(255, 255, 255, 0.7);
+  --destructive: #FF1493;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #FF10F0;
+  --chart-1: #FF1493;
+  --chart-2: #FF10F0;
+  --chart-3: #6A0CAF;
+  --chart-4: #FF1493;
+  --chart-5: #FF10F0;
+  --radius: 0.625rem;
+  --sidebar: rgba(20, 10, 40, 0.8);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF1493;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #FF10F0;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #FF10F0;
+
+  /* Neon Glow Effects */
+  --glow-pink: 0 0 20px #FF1493, 0 0 40px #FF1493;
+  --glow-magenta: 0 0 20px #FF10F0, 0 0 40px #FF10F0;
+  --glow-purple: 0 0 20px #6A0CAF, 0 0 40px #6A0CAF;
+}
+
+.dark {
+  --background: #0a0015;
+  --foreground: #ffffff;
+  --card: rgba(20, 10, 40, 0.8);
+  --card-foreground: #ffffff;
+  --popover: rgba(20, 10, 40, 0.95);
+  --popover-foreground: #ffffff;
+  --primary: #FF1493;
+  --primary-foreground: #ffffff;
+  --secondary: #FF10F0;
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.2);
+  --muted-foreground: rgba(255, 255, 255, 0.7);
+  --accent: #6A0CAF;
+  --accent-foreground: #ffffff;
+  --destructive: #FF1493;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #FF10F0;
+  --chart-1: #FF1493;
+  --chart-2: #FF10F0;
+  --chart-3: #6A0CAF;
+  --chart-4: #FF1493;
+  --chart-5: #FF10F0;
+  --sidebar: rgba(20, 10, 40, 0.8);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF1493;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #FF10F0;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #FF10F0;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-playfair: var(--font-playfair), serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0a0015 0%, #2d0f4e 50%, #0a0015 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Neon Glow Text Effects */
+.neon-text {
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 20px #FF1493,
+    0 0 40px #FF1493,
+    0 0 80px #FF1493,
+    0 0 120px #FF1493,
+    0 0 160px #FF1493;
+}
+
+.neon-text-magenta {
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 20px #FF10F0,
+    0 0 40px #FF10F0,
+    0 0 80px #FF10F0,
+    0 0 120px #FF10F0,
+    0 0 160px #FF10F0;
+}
+
+/* Button Effects - No Glow */
+.neon-pulse {
+  transition: all 0.3s ease;
+}
+
+.neon-pulse:hover {
+  transform: scale(1.05);
+}
+
+.neon-pulse-magenta {
+  transition: all 0.3s ease;
+}
+
+.neon-pulse-magenta:hover {
+  transform: scale(1.05);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(20, 10, 40, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(20, 10, 40, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 20, 147, 0.2);
+}
+
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+@keyframes wobble {
+
+  0%,
+  100% {
+    transform: rotate(-1deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(1deg) scale(1.02);
+  }
+
+  50% {
+    transform: rotate(-1.5deg) scale(1.03);
+  }
+
+  75% {
+    transform: rotate(1deg) scale(1.02);
+  }
+}
+
+.wobble {
+  animation: wobble 0.6s infinite;
+}
