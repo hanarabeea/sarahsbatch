@@ -140,17 +140,16 @@
     background:
       linear-gradient(135deg, rgba(10, 0, 21, 0.4) 0%, rgba(45, 15, 78, 0.3) 50%, rgba(10, 0, 21, 0.4) 100%),
       url('/bg.jpg') center center / cover no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
   }
 
   /* Mobile-specific background fix */
   @media (max-width: 768px) {
     body {
-      background-attachment: scroll;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background:
+        linear-gradient(135deg, rgba(10, 0, 21, 0.7) 0%, rgba(45, 15, 78, 0.6) 50%, rgba(10, 0, 21, 0.7) 100%),
+        url('/bg.jpg') center center / cover no-repeat;
+      min-height: 100vh;
     }
   }
 }
