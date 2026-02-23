@@ -86,7 +86,7 @@ export default function Hero() {
           className="mb-8"
         >
           <h1 className="text-7xl md:text-9xl font-playlist mb-3 neon-text">
-            SARAH'S PARTY
+            Sarah's Party
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto mb-4" />
           <p className="text-xs md:text-base font-poppins tracking-widest text-pink-200 uppercase">
@@ -102,7 +102,7 @@ export default function Hero() {
           className="mb-8"
         >
           <h2 className="text-4xl md:text-7xl font-playlist mb-6 text-white">
-            SARAH'S FINAL RIOT
+            Sarah's Final Riot
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto" />
         </motion.div>
@@ -132,6 +132,7 @@ export default function Hero() {
           <button
             onClick={() => document.getElementById('countdown')?.scrollIntoView({ behavior: 'smooth' })}
             className="neon-pulse px-10 py-4 bg-primary font-bold text-white rounded-lg text-lg font-poppins hover:scale-105 transition-transform duration-300 uppercase tracking-wider"
+            suppressHydrationWarning={true}
           >
             Get the Details
           </button>

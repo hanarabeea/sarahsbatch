@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Playfair_Display, Poppins, Style_Script } from 'next/font/google'
+import { Geist, Geist_Mono, Playfair_Display, Poppins, Allura } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const _poppins = Poppins({ weight: ["400", "600", "700", "800"], subsets: ["latin"], variable: "--font-poppins" });
-const _styleScript = Style_Script({ weight: "400", subsets: ["latin"], variable: "--font-style-script" });
+const _allura = Allura({ weight: "400", subsets: ["latin"], variable: "--font-allura" });
 
 export const metadata: Metadata = {
   title: "Sarah's Party - Final Night of Freedom 🪩",
@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_styleScript.variable}`}>
+    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_allura.variable}`}>
       <body className="font-poppins antialiased">
         <div className="fixed-bg" />
         {children}

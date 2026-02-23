@@ -92,6 +92,7 @@
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --font-poppins: var(--font-poppins), sans-serif;
   --font-playfair: var(--font-playfair), serif;
+  --font-allura: var(--font-allura), cursive;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -145,10 +146,8 @@
 /* Fixed Background system - Optimized for Mobile Viewport */
 .fixed-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  /* Use inset to ensure it stretches to all edges */
+  inset: -10px;
   z-index: -1;
   background-image:
     linear-gradient(135deg, rgba(10, 0, 21, 0.45) 0%, rgba(45, 15, 78, 0.35) 50%, rgba(10, 0, 21, 0.45) 100%),
@@ -156,10 +155,10 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* Prevent browser from stretching bg to document height */
-  background-attachment: scroll !important;
+  /* Fixed attachment on a fixed div is the bulletproof way for iOS */
+  background-attachment: fixed;
   pointer-events: none;
-  /* Force a new compositing layer for smooth scrolling and static position */
+  /* Hardware acceleration */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
@@ -169,15 +168,15 @@
     background-image:
       linear-gradient(135deg, rgba(10, 0, 21, 0.75) 0%, rgba(45, 15, 78, 0.65) 50%, rgba(10, 0, 21, 0.75) 100%),
       url('/bg.jpg');
-    /* Stable viewport height handles mobile address bars better */
-    height: 100vh;
-    height: 100svh;
+    /* Use lvh to over-fill the viewport to avoid gaps when address bar hides */
+    height: 105lvh;
+    inset: -2lvh -2lvw;
   }
 }
 
 /* Script Font utility */
 .font-playlist {
-  font-family: var(--font-style-script), cursive;
+  font-family: var(--font-allura), cursive !important;
 }
 
 /* Intensive Neon Glow - Matches User Image */

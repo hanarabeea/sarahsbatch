@@ -16,7 +16,7 @@ export default function Details() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-playlist neon-text mb-4">
-            THE DEETS
+            The Deets
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto" />
         </motion.div>

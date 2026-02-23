@@ -59,7 +59,7 @@ export default function Countdown() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-playlist neon-text-magenta mb-4">
-            COUNTDOWN TO CHAOS
+            Countdown to Chaos
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mx-auto" />
           <p className="text-lg font-poppins text-pink-300 mt-6">Main Character Energy incoming</p>
