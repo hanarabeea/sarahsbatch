@@ -136,27 +136,48 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    background:
-      linear-gradient(135deg, rgba(10, 0, 21, 0.4) 0%, rgba(45, 15, 78, 0.3) 50%, rgba(10, 0, 21, 0.4) 100%),
-      url('/bg.jpg') center center / cover no-repeat;
+    @apply bg-background text-foreground overflow-x-hidden;
     min-height: 100vh;
   }
+}
 
-  /* Mobile-specific background fix */
-  @media (max-width: 768px) {
-    body {
-      background:
-        linear-gradient(135deg, rgba(10, 0, 21, 0.7) 0%, rgba(45, 15, 78, 0.6) 50%, rgba(10, 0, 21, 0.7) 100%),
-        url('/bg.jpg') center center / cover no-repeat;
-      min-height: 100vh;
-    }
+/* Fixed Background system to prevent mobile zoom */
+/* Fixed Background system - Optimized for Mobile Viewport */
+.fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image:
+    linear-gradient(135deg, rgba(10, 0, 21, 0.45) 0%, rgba(45, 15, 78, 0.35) 50%, rgba(10, 0, 21, 0.45) 100%),
+    url('/bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Prevent browser from stretching bg to document height */
+  background-attachment: scroll !important;
+  pointer-events: none;
+  /* Force a new compositing layer for smooth scrolling and static position */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .fixed-bg {
+    background-image:
+      linear-gradient(135deg, rgba(10, 0, 21, 0.75) 0%, rgba(45, 15, 78, 0.65) 50%, rgba(10, 0, 21, 0.75) 100%),
+      url('/bg.jpg');
+    /* Stable viewport height handles mobile address bars better */
+    height: 100vh;
+    height: 100svh;
   }
 }
 
 /* Script Font utility */
 .font-playlist {
-  font-family: var(--font-pacifico), cursive;
+  font-family: var(--font-style-script), cursive;
 }
 
 /* Intensive Neon Glow - Matches User Image */
