@@ -146,17 +146,16 @@
 /* Fixed Background system - Optimized for Mobile Viewport */
 .fixed-bg {
   position: fixed;
-  /* Use inset to ensure it stretches to all edges */
-  inset: -10px;
+  inset: 0;
   z-index: -1;
   background-image:
     linear-gradient(135deg, rgba(10, 0, 21, 0.45) 0%, rgba(45, 15, 78, 0.35) 50%, rgba(10, 0, 21, 0.45) 100%),
     url('/bg.jpg');
-  background-position: center center;
+  background-position: center 20%;
   background-size: cover;
   background-repeat: no-repeat;
-  /* Fixed attachment on a fixed div is the bulletproof way for iOS */
-  background-attachment: fixed;
+  /* Standard scroll here because the container itself is fixed */
+  background-attachment: scroll;
   pointer-events: none;
   /* Hardware acceleration */
   transform: translateZ(0);
@@ -168,9 +167,12 @@
     background-image:
       linear-gradient(135deg, rgba(10, 0, 21, 0.75) 0%, rgba(45, 15, 78, 0.65) 50%, rgba(10, 0, 21, 0.75) 100%),
       url('/bg.jpg');
-    /* Use lvh to over-fill the viewport to avoid gaps when address bar hides */
-    height: 105lvh;
-    inset: -2lvh -2lvw;
+    /* Use dvh (dynamic viewport height) to perfectly fit mobile screens */
+    height: 100dvh;
+    width: 100%;
+    inset: 0;
+    /* Adjust position upwards slightly for better mobile focal point */
+    background-position: center 15%;
   }
 }
 

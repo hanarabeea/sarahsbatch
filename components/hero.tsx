@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
+      className="relative min-h-[100dvh] flex items-start md:items-center justify-center px-4 pt-24 pb-10 md:py-20 overflow-hidden"
     >
       {/* Premium Gradient Background - Semi-transparent to show body bg */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-pink-950/20 to-purple-950/60 pointer-events-none" />
