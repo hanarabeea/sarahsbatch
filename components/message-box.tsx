@@ -23,22 +23,22 @@ export default function MessageBox() {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulated placeholder for Gmail SMTP integration
-    // In production, this would call an API endpoint that handles email sending via Gmail SMTP
     try {
-      // Placeholder: simulate email sending
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      console.log('Message sent:', {
-        to: 'sarah@example.com',
-        from: formData.name,
-        message: formData.message,
-        timestamp: new Date().toISOString(),
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
 
       setSubmitted(true)
       setFormData({ name: '', message: '' })
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitted(false)
