@@ -10,6 +10,7 @@ export default function MessageBox() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -22,6 +23,7 @@ export default function MessageBox() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    setError(null)
 
     try {
       const response = await fetch('/api/contact', {
@@ -32,10 +34,9 @@ export default function MessageBox() {
         body: JSON.stringify(formData),
       })
 
-      const result = await response.json()
-
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message')
+        const data = await response.json().catch(() => ({}))
+        throw new Error(data?.error || 'Failed to send message')
       }
 
       setSubmitted(true)
@@ -45,9 +46,10 @@ export default function MessageBox() {
       setTimeout(() => {
         setSubmitted(false)
       }, 3000)
-    } catch (error) {
-      console.error('Error sending message:', error)
-      alert('Oops! Something went wrong. Please try again.')
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Something went wrong. Try again!'
+      setError(message)
+      console.error('Error sending message:', err)
     } finally {
       setIsLoading(false)
     }
@@ -156,9 +158,11 @@ export default function MessageBox() {
                   {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
 
-                <p className="text-center text-xs text-pink-200/50 font-poppins mt-4">
-                  Email integration ready for production
-                </p>
+                {error && (
+                  <div className="mt-4 px-4 py-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-sm font-poppins text-center">
+                    ⚠️ {error}
+                  </div>
+                )}
               </motion.div>
             </form>
           )}
