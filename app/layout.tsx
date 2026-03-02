@@ -10,7 +10,6 @@ const _poppins = Poppins({ weight: ["400", "600", "700", "800"], subsets: ["lati
 const _allura = Allura({ weight: "400", subsets: ["latin"], variable: "--font-allura" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sarahs-bachelorette.digitivaa.com'),
   title: "Sarah's Party - Final Night of Freedom 🪩",
   description: "Join Sarah for the wildest night before the wedding. Pink Disco Energy, Main Character Vibes, and Bride Squad Only.",
   generator: 'v0.app',
@@ -39,11 +38,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sarah's Party - Final Night of Freedom 🪩",
     description: "Join Sarah for the wildest night before the wedding. Pink Disco Energy, Main Character Vibes, and Bride Squad Only.",
-    url: 'https://sarahs-bachelorette.digitivaa.com',
+    url: 'https://sarahsbachelorette.netlify.app',
     siteName: "Sarah's Bachelorette",
     images: [
       {
-        url: '/preview.jpg',
+        url: 'https://sarahsbachelorette.netlify.app/disco-ball.jpg',
         width: 1200,
         height: 630,
         alt: "Sarah's Party",
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Sarah's Party - Final Night of Freedom 🪩",
     description: "Join Sarah for the wildest night before the wedding. Pink Disco Energy, Main Character Vibes, and Bride Squad Only.",
-    images: ['/preview.jpg'],
+    images: ['https://sarahsbachelorette.netlify.app/disco-ball.jpg'],
   },
 }
 
@@ -65,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_allura.variable}`}>
+    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_monsieurLaDoulaise.variable}`}>
       <body className="font-poppins antialiased">
         <div className="fixed-bg" />
         {children}
