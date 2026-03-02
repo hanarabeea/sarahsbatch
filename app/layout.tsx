@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_monsieurLaDoulaise.variable}`}>
+    <html lang="en" className={`${_playfair.variable} ${_poppins.variable} ${_allura.variable}`}>
       <body className="font-poppins antialiased">
         <div className="fixed-bg" />
         {children}
